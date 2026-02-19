@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Basel Classic Font Loading */
+/* In production, replace with actual Basel Classic font files */
+@font-face {
+  font-family: 'Basel Classic';
+  src: local('Inter'), local('system-ui');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Basel Classic';
+  src: local('Inter'), local('system-ui');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-heading: 'Basel Classic', system-ui, -apple-system, sans-serif;
+  --font-body: 'Basel Classic', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-brand-charcoal bg-white antialiased;
+    letter-spacing: 0.01em;
+  }
+
+  /* Heading Styles - Light weight, tight tracking per brand */
+  h1, h2, h3 {
+    @apply font-heading font-light;
+    letter-spacing: -0.05em;
+    line-height: 1;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  /* Small caps for labels */
+  .small-caps {
+    @apply text-xs uppercase font-normal;
+    letter-spacing: 0.1em;
+  }
+}
+
+@layer components {
+  /* Primary CTA - Coral (NOT orange #FFA400) */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           bg-brand-coral text-white font-normal rounded-none
+           transition-all duration-300 hover:bg-brand-rust
+           focus:outline-none focus:ring-2 focus:ring-brand-coral focus:ring-offset-2;
+    letter-spacing: 0.05em;
+  }
+
+  /* Secondary CTA - Golden Yellow */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           bg-brand-golden-yellow text-brand-charcoal font-normal rounded-none
+           transition-all duration-300 hover:brightness-95
+           focus:outline-none focus:ring-2 focus:ring-brand-golden-yellow focus:ring-offset-2;
+    letter-spacing: 0.05em;
+  }
+
+  /* Outline Button */
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           border-2 border-brand-charcoal text-brand-charcoal font-normal rounded-none
+           transition-all duration-300 hover:bg-brand-charcoal hover:text-white
+           focus:outline-none focus:ring-2 focus:ring-brand-charcoal focus:ring-offset-2;
+    letter-spacing: 0.05em;
+  }
+
+  /* Product Card */
+  .product-card {
+    @apply relative overflow-hidden bg-brand-peach/20;
+  }
+
+  .product-card-image {
+    @apply aspect-square p-[5%] flex items-center justify-center;
+  }
+
+  /* Warm gradient backgrounds for product displays */
+  .bg-product-warm {
+    @apply bg-gradient-to-br from-brand-peach/30 to-brand-blush/30;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  /* Container */
+  .container-narrow {
+    @apply max-w-5xl mx-auto px-4 md:px-6;
+  }
+}
+
+@layer utilities {
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Product image glow effect */
+  .product-glow {
+    filter: drop-shadow(0 10px 30px rgba(255, 164, 0, 0.15));
+  }
+
+  /* Smooth image loading */
+  .img-loading {
+    @apply bg-brand-peach/20 animate-pulse;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-brand-peach/20;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-caramel/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-brand-caramel;
+}
+
+/* Selection color using brand warm tones */
+::selection {
+  @apply bg-brand-coral/20 text-brand-charcoal;
+}
