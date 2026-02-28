@@ -168,6 +168,7 @@ export const products: Product[] = [
       '/images/products/wander-3.jpg',
       '/images/products/wander-4.jpg',
     ],
+    featured: true,
   },
 
   // EXPERIMENTAL REBEL
@@ -546,7 +547,13 @@ export function getProductsByCollection(collection: Collection): Product[] {
 }
 
 export function getFeaturedProducts(): Product[] {
-  return products.filter(p => p.featured)
+  const featured = products.filter(p => p.featured)
+  // Prioritize products with real images
+  return featured.sort((a, b) => {
+    const aReal = hasRealImages(a) ? 1 : 0
+    const bReal = hasRealImages(b) ? 1 : 0
+    return bReal - aReal
+  })
 }
 
 export function getNewProducts(): Product[] {

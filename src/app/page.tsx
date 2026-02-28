@@ -56,15 +56,15 @@ export default function HomePage() {
 
             {/* Hero Image */}
             <div className="relative aspect-square lg:aspect-[4/5] animate-slide-up">
-              <div className="absolute inset-[5%] bg-gradient-to-br from-brand-coral/10 to-brand-golden-yellow/10 rounded-3xl">
-                <div className="relative w-full h-full flex items-center justify-center">
-                  {/* Placeholder for hero product image */}
-                  <div className="text-center p-8">
-                    <div className="w-48 h-48 mx-auto bg-gradient-to-br from-brand-peach to-brand-blush rounded-full flex items-center justify-center mb-4">
-                      <span className="text-6xl">✦</span>
-                    </div>
-                    <p className="text-brand-charcoal/40 text-sm">Hero Product Image</p>
-                  </div>
+              <div className="absolute inset-[5%] bg-gradient-to-br from-brand-coral/10 to-brand-golden-yellow/10 rounded-3xl overflow-hidden">
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/images/products/lotus-1.jpg"
+                    alt="Lotus Table Lamp — Vietnamese-crafted ceramic lighting"
+                    fill
+                    className="object-contain p-8 product-glow"
+                    priority
+                  />
                 </div>
               </div>
             </div>
