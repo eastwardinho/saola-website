@@ -71,7 +71,11 @@ export const products: Product[] = [
     description: 'We all love flamingos! So why not make a table lamp and a flamingo in one! This quirky design is a fabulous terrazzo statement inspired by our love of the bird.',
     material: 'Blush terrazzo',
     price: 189,
-    images: ['/images/products/flamingo-table-lamp.jpg'],
+    images: [
+      '/images/products/flamingo-table-lamp-studio.png',
+      '/images/products/flamingo-table-lamp-lifestyle.png',
+      '/images/products/flamingo-table-lamp-detail.png',
+    ],
     featured: true,
   },
   {
@@ -83,7 +87,11 @@ export const products: Product[] = [
     description: 'Just hearing the name "Cheese" puts a smile on your face. This lamp is a combination of cheerful colors and interesting silhouettes. The original idea was taken from the movie Tom & Jerry, which is a movie loved by many Vietnamese children.',
     material: 'Ceramic',
     price: 159,
-    images: ['/images/products/cheese-table-lamp.jpg'],
+    images: [
+      '/images/products/cheese-table-lamp-studio.png',
+      '/images/products/cheese-table-lamp-lifestyle.png',
+      '/images/products/cheese-table-lamp-detail.png',
+    ],
     featured: true,
   },
   {
@@ -193,7 +201,11 @@ export const products: Product[] = [
     description: 'Bunny is inspired by an American artist Jeff Koons. It is made as if a little bunny has snuck into your home, hidden under the lampshade just around the corners. In striking metallic finish the Bunny lamp will surely capture the attention of whoever visits your home regardless of their age.',
     material: 'Resin',
     price: 249,
-    images: ['/images/products/bunny-table-lamp.jpg'],
+    images: [
+      '/images/products/bunny-table-lamp-studio.png',
+      '/images/products/bunny-table-lamp-lifestyle.png',
+      '/images/products/bunny-table-lamp-detail.png',
+    ],
     featured: true,
     new: true,
   },
