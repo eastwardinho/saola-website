@@ -1,10 +1,10 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, Heart, Share2, Truck, Shield, Leaf } from 'lucide-react'
+import { Heart, Share2, Truck, Shield, Leaf } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { ProductCard } from '@/components/ui/ProductCard'
+import { ImageGallery } from '@/components/ui/ImageGallery'
 import { 
   getProductBySlug, 
   getProductsByCollection, 
@@ -67,52 +67,13 @@ export default async function ProductPage({ params }: PageProps) {
       {/* Product Section */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Product Image */}
-          <div className="space-y-4">
-            <div 
-              className="aspect-square relative overflow-hidden"
-              style={{
-                background: `linear-gradient(135deg, ${collection.gradientFrom}15 0%, ${collection.gradientTo}25 100%)`,
-              }}
-            >
-              {/* 5% margin per brand rules */}
-              <div className="absolute inset-[5%] flex items-center justify-center">
-                <div className="relative w-full h-full">
-                  <Image
-                    src={product.images[0] || '/images/placeholder.svg'}
-                    alt={product.name}
-                    fill
-                    className="object-contain product-glow"
-                    priority
-                  />
-                </div>
-              </div>
-              
-              {/* QR Code placeholder */}
-              <div className="absolute bottom-4 right-4 w-16 h-16 bg-white rounded shadow-lg flex items-center justify-center">
-                <div className="w-10 h-10 bg-brand-charcoal grid grid-cols-3 gap-[1px] p-1">
-                  {[...Array(9)].map((_, i) => (
-                    <div key={i} className={`${Math.random() > 0.5 ? 'bg-white' : 'bg-brand-charcoal'}`} />
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Thumbnail strip placeholder */}
-            <div className="flex gap-2">
-              {[1, 2, 3].map((i) => (
-                <div 
-                  key={i}
-                  className={`w-20 h-20 flex-shrink-0 cursor-pointer border-2 transition-colors ${
-                    i === 1 ? 'border-brand-coral' : 'border-transparent hover:border-brand-peach'
-                  }`}
-                  style={{
-                    background: `linear-gradient(135deg, ${collection.gradientFrom}10 0%, ${collection.gradientTo}20 100%)`,
-                  }}
-                />
-              ))}
-            </div>
-          </div>
+          {/* Product Image Gallery */}
+          <ImageGallery
+            images={product.images}
+            productName={product.name}
+            gradientFrom={collection.gradientFrom}
+            gradientTo={collection.gradientTo}
+          />
 
           {/* Product Info */}
           <div className="space-y-6">
