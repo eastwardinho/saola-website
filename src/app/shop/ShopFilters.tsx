@@ -1,6 +1,5 @@
 'use client'
 
-import { useRouter, useSearchParams } from 'next/navigation'
 import { type Collection } from '@/lib/products'
 
 interface ShopFiltersProps {
@@ -8,27 +7,18 @@ interface ShopFiltersProps {
   activeCollection?: Collection
   activeSort?: string
   productCount: number
+  onCollectionChange: (collection: Collection | undefined) => void
+  onSortChange: (sort: string | undefined) => void
 }
 
-export function ShopFilters({ 
-  collections, 
-  activeCollection, 
+export function ShopFilters({
+  collections,
+  activeCollection,
   activeSort,
-  productCount 
+  productCount,
+  onCollectionChange,
+  onSortChange,
 }: ShopFiltersProps) {
-  const router = useRouter()
-  const searchParams = useSearchParams()
-
-  const updateFilter = (key: string, value: string | null) => {
-    const params = new URLSearchParams(searchParams.toString())
-    if (value) {
-      params.set(key, value)
-    } else {
-      params.delete(key)
-    }
-    router.push(`/shop?${params.toString()}`)
-  }
-
   const collectionKeys = Object.keys(collections) as Collection[]
 
   return (
@@ -36,10 +26,10 @@ export function ShopFilters({
       {/* Collection Filter */}
       <div className="flex flex-wrap gap-2">
         <button
-          onClick={() => updateFilter('collection', null)}
+          onClick={() => onCollectionChange(undefined)}
           className={`px-4 py-2 text-sm transition-colors ${
-            !activeCollection 
-              ? 'bg-brand-charcoal text-white' 
+            !activeCollection
+              ? 'bg-brand-charcoal text-white'
               : 'bg-brand-peach/20 text-brand-charcoal hover:bg-brand-peach/40'
           }`}
         >
@@ -48,10 +38,10 @@ export function ShopFilters({
         {collectionKeys.map((key) => (
           <button
             key={key}
-            onClick={() => updateFilter('collection', key)}
+            onClick={() => onCollectionChange(key)}
             className={`px-4 py-2 text-sm transition-colors ${
-              activeCollection === key 
-                ? 'bg-brand-charcoal text-white' 
+              activeCollection === key
+                ? 'bg-brand-charcoal text-white'
                 : 'bg-brand-peach/20 text-brand-charcoal hover:bg-brand-peach/40'
             }`}
           >
@@ -67,7 +57,7 @@ export function ShopFilters({
         </span>
         <select
           value={activeSort || ''}
-          onChange={(e) => updateFilter('sort', e.target.value || null)}
+          onChange={(e) => onSortChange(e.target.value || undefined)}
           className="px-3 py-2 text-sm bg-white border border-brand-peach/30 text-brand-charcoal focus:outline-none focus:border-brand-coral"
         >
           <option value="">Featured</option>
