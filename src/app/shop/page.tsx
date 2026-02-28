@@ -1,38 +1,31 @@
-import { Metadata } from 'next'
+'use client'
+
+import { useState, useMemo } from 'react'
 import { ProductCard } from '@/components/ui/ProductCard'
 import { getAllProducts, collections, type Collection } from '@/lib/products'
 import { ShopFilters } from './ShopFilters'
 
-export const metadata: Metadata = {
-  title: 'Shop All Products',
-  description: 'Browse our complete collection of artisan-crafted Vietnamese lighting. Table lamps, floor lamps, pendants, and mood lighting made with ceramic, bamboo, terrazzo, and more.',
-}
+const allProducts = getAllProducts()
 
-interface ShopPageProps {
-  searchParams: Promise<{
-    collection?: Collection
-    sort?: string
-    type?: string
-  }>
-}
+export default function ShopPage() {
+  const [activeCollection, setActiveCollection] = useState<Collection | undefined>()
+  const [activeSort, setActiveSort] = useState<string | undefined>()
 
-export default async function ShopPage({ searchParams }: ShopPageProps) {
-  const params = await searchParams
-  const allProducts = getAllProducts()
-  
-  // Filter by collection if specified
-  let filteredProducts = params.collection 
-    ? allProducts.filter(p => p.collection === params.collection)
-    : allProducts
+  const filteredProducts = useMemo(() => {
+    let result = activeCollection
+      ? allProducts.filter(p => p.collection === activeCollection)
+      : allProducts
 
-  // Sort products
-  if (params.sort === 'price-low') {
-    filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price)
-  } else if (params.sort === 'price-high') {
-    filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price)
-  } else if (params.sort === 'name') {
-    filteredProducts = [...filteredProducts].sort((a, b) => a.name.localeCompare(b.name))
-  }
+    if (activeSort === 'price-low') {
+      result = [...result].sort((a, b) => a.price - b.price)
+    } else if (activeSort === 'price-high') {
+      result = [...result].sort((a, b) => b.price - a.price)
+    } else if (activeSort === 'name') {
+      result = [...result].sort((a, b) => a.name.localeCompare(b.name))
+    }
+
+    return result
+  }, [activeCollection, activeSort])
 
   return (
     <div className="min-h-screen bg-white">
@@ -42,7 +35,7 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
           <p className="small-caps text-brand-coral mb-3">Our Collection</p>
           <h1>Shop All Products</h1>
           <p className="mt-4 text-brand-charcoal/70 max-w-2xl mx-auto">
-            Discover our complete range of artisan-crafted lighting. 
+            Discover our complete range of artisan-crafted lighting.
             Each piece is handmade in Vietnam using traditional techniques and premium materials.
           </p>
         </div>
@@ -51,11 +44,13 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
       {/* Shop Content */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         {/* Filters */}
-        <ShopFilters 
+        <ShopFilters
           collections={collections}
-          activeCollection={params.collection}
-          activeSort={params.sort}
+          activeCollection={activeCollection}
+          activeSort={activeSort}
           productCount={filteredProducts.length}
+          onCollectionChange={setActiveCollection}
+          onSortChange={setActiveSort}
         />
 
         {/* Products Grid */}

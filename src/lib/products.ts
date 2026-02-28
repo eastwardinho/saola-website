@@ -71,7 +71,11 @@ export const products: Product[] = [
     description: 'We all love flamingos! So why not make a table lamp and a flamingo in one! This quirky design is a fabulous terrazzo statement inspired by our love of the bird.',
     material: 'Blush terrazzo',
     price: 189,
-    images: ['/images/products/flamingo-table-lamp.jpg'],
+    images: [
+      '/images/products/flamingo-table-lamp-studio.png',
+      '/images/products/flamingo-table-lamp-lifestyle.png',
+      '/images/products/flamingo-table-lamp-detail.png',
+    ],
     featured: true,
   },
   {
@@ -83,7 +87,11 @@ export const products: Product[] = [
     description: 'Just hearing the name "Cheese" puts a smile on your face. This lamp is a combination of cheerful colors and interesting silhouettes. The original idea was taken from the movie Tom & Jerry, which is a movie loved by many Vietnamese children.',
     material: 'Ceramic',
     price: 159,
-    images: ['/images/products/cheese-table-lamp.jpg'],
+    images: [
+      '/images/products/cheese-table-lamp-studio.png',
+      '/images/products/cheese-table-lamp-lifestyle.png',
+      '/images/products/cheese-table-lamp-detail.png',
+    ],
     featured: true,
   },
   {
@@ -162,7 +170,13 @@ export const products: Product[] = [
     description: 'Sometimes you like to take a walk on the winding road? So get a Wander light, the colorful matte glaze with curvaceous feminine shape, ensures you will have a nice partner on the amazing trip.',
     material: 'Ceramic',
     price: 199,
-    images: ['/images/products/wander-pendant.jpg'],
+    images: [
+      '/images/products/wander-1.jpg',
+      '/images/products/wander-2.jpg',
+      '/images/products/wander-3.jpg',
+      '/images/products/wander-4.jpg',
+    ],
+    featured: true,
   },
 
   // EXPERIMENTAL REBEL
@@ -187,7 +201,11 @@ export const products: Product[] = [
     description: 'Bunny is inspired by an American artist Jeff Koons. It is made as if a little bunny has snuck into your home, hidden under the lampshade just around the corners. In striking metallic finish the Bunny lamp will surely capture the attention of whoever visits your home regardless of their age.',
     material: 'Resin',
     price: 249,
-    images: ['/images/products/bunny-table-lamp.jpg'],
+    images: [
+      '/images/products/bunny-table-lamp-studio.png',
+      '/images/products/bunny-table-lamp-lifestyle.png',
+      '/images/products/bunny-table-lamp-detail.png',
+    ],
     featured: true,
     new: true,
   },
@@ -406,7 +424,11 @@ export const products: Product[] = [
     description: 'Lotus pays tribute to the Vietnamese national flower. We love taking inspiration from nature and we think the Lotus Lamp is just as beautiful as the flower!',
     material: 'Ceramic',
     price: 219,
-    images: ['/images/products/lotus-table-lamp.jpg'],
+    images: [
+      '/images/products/lotus-1.jpg',
+      '/images/products/lotus-2.jpg',
+      '/images/products/lotus-3.jpg',
+    ],
     featured: true,
     new: true,
   },
@@ -419,7 +441,11 @@ export const products: Product[] = [
     description: 'Clove is a celebration of a plant that many of us love to cook with, the garlic plant. A beautifully refined ceramic lamp, perfect for your bedside table. Don\'t worry it won\'t smell like real garlic!',
     material: 'Ceramic',
     price: 169,
-    images: ['/images/products/clove-table-lamp.jpg'],
+    images: [
+      '/images/products/clove-1.jpg',
+      '/images/products/clove-2.jpg',
+      '/images/products/clove-3.jpg',
+    ],
   },
   {
     id: 'marshmallow-table-lamp',
@@ -430,7 +456,10 @@ export const products: Product[] = [
     description: 'It\'s delicious, It\'s sweet, it\'s positively delectable. It\'s the Marshmallow light. Using Vietnamese\'s infamous ceramic handicraft, we brought these delicious treats to your home. The cute sized lamp would sit perfectly on your bedside.',
     material: 'Ceramic',
     price: 149,
-    images: ['/images/products/marshmallow-table-lamp.jpg'],
+    images: [
+      '/images/products/marshmallow-colorful.jpg',
+      '/images/products/marshmallow-white.jpg',
+    ],
     featured: true,
   },
   {
@@ -442,7 +471,10 @@ export const products: Product[] = [
     description: 'Geode is made up of polygonal geometry. Modern, simple, exquisite. We think this lamp speaks for itself.',
     material: 'Faux marble',
     price: 239,
-    images: ['/images/products/geode-table-lamp.jpg'],
+    images: [
+      '/images/products/geode-table-black.jpg',
+      '/images/products/geode-table-green.jpg',
+    ],
   },
   {
     id: 'hyde-mood-lamp',
@@ -475,7 +507,11 @@ export const products: Product[] = [
     description: 'Standing loud and proud, this elegant geometric marble floor lamp adds a touch of luxe to your living room, sure to bring hotel luxury to your home.',
     material: 'Faux marble',
     price: 469,
-    images: ['/images/products/geode-floor-lamp.jpg'],
+    images: [
+      '/images/products/geode-floor-1.jpg',
+      '/images/products/geode-floor-2.jpg',
+      '/images/products/geode-floor-3.jpg',
+    ],
     featured: true,
   },
   {
@@ -501,6 +537,17 @@ export const products: Product[] = [
     images: ['/images/products/wagasa-pendant.jpg'],
     featured: true,
   },
+  {
+    id: 'dodeca-table-lamp',
+    slug: 'dodeca-table-lamp',
+    name: 'Dodeca Table Lamp',
+    collection: 'pretty-posh',
+    tagline: 'Twelve-sided elegance',
+    description: 'Dodeca draws its name from the dodecahedron, a twelve-sided geometric form. This sculptural table lamp combines mathematical precision with organic warmth, creating a striking focal point for any refined interior.',
+    material: 'Resin',
+    price: 209,
+    images: ['/images/products/dodeca-table-brown.jpg'],
+  },
 ]
 
 export function getProductBySlug(slug: string): Product | undefined {
@@ -512,7 +559,13 @@ export function getProductsByCollection(collection: Collection): Product[] {
 }
 
 export function getFeaturedProducts(): Product[] {
-  return products.filter(p => p.featured)
+  const featured = products.filter(p => p.featured)
+  // Prioritize products with real images
+  return featured.sort((a, b) => {
+    const aReal = hasRealImages(a) ? 1 : 0
+    const bReal = hasRealImages(b) ? 1 : 0
+    return bReal - aReal
+  })
 }
 
 export function getNewProducts(): Product[] {
@@ -521,6 +574,10 @@ export function getNewProducts(): Product[] {
 
 export function getAllProducts(): Product[] {
   return products
+}
+
+export function hasRealImages(product: Product): boolean {
+  return product.images.length > 0 && !product.images[0].includes('placeholder')
 }
 
 export function formatPrice(price: number): string {
