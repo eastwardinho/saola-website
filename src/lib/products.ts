@@ -71,11 +71,7 @@ export const products: Product[] = [
     description: 'We all love flamingos! So why not make a table lamp and a flamingo in one! This quirky design is a fabulous terrazzo statement inspired by our love of the bird.',
     material: 'Blush terrazzo',
     price: 189,
-    images: [
-      '/images/products/flamingo-table-lamp-studio.png',
-      '/images/products/flamingo-table-lamp-lifestyle.png',
-      '/images/products/flamingo-table-lamp-detail.png',
-    ],
+    images: ['/images/products/flamingo-table-lamp-lifestyle.png', '/images/products/flamingo-table-lamp-detail.png', '/images/products/flamingo-table-lamp-studio.png'],
     featured: true,
   },
   {
@@ -87,11 +83,7 @@ export const products: Product[] = [
     description: 'Just hearing the name "Cheese" puts a smile on your face. This lamp is a combination of cheerful colors and interesting silhouettes. The original idea was taken from the movie Tom & Jerry, which is a movie loved by many Vietnamese children.',
     material: 'Ceramic',
     price: 159,
-    images: [
-      '/images/products/cheese-table-lamp-studio.png',
-      '/images/products/cheese-table-lamp-lifestyle.png',
-      '/images/products/cheese-table-lamp-detail.png',
-    ],
+    images: ['/images/products/cheese-table-lamp-lifestyle.png', '/images/products/cheese-table-lamp-detail.png', '/images/products/cheese-table-lamp-studio.png'],
     featured: true,
   },
   {
@@ -103,7 +95,7 @@ export const products: Product[] = [
     description: 'A fun terrazzo mood lamp, its small size makes it truly versatile! We can think of so many places that Out could look great in the home, be that your shelf, bedside, or coffee table. Buy Out with its friend In!',
     material: 'Terrazzo',
     price: 89,
-    images: ['/images/products/out-mood-lamp.jpg'],
+    images: ['/images/products/out-mood-lamp-lifestyle.png', '/images/products/out-mood-lamp-detail.png', '/images/products/out-mood-lamp-studio.png'],
   },
   {
     id: 'in-mood-lamp',
@@ -114,7 +106,7 @@ export const products: Product[] = [
     description: 'A fun terrazzo mood lamp, its small size makes it truly versatile! We can think of so many places that In could look great in the home, be that your shelf, bedside, or coffee table. Buy In with its friend Out!',
     material: 'Terrazzo',
     price: 89,
-    images: ['/images/products/in-mood-lamp.jpg'],
+    images: ['/images/products/in-mood-lamp-lifestyle.png', '/images/products/in-mood-lamp-detail.png', '/images/products/in-mood-lamp-studio.png'],
   },
   {
     id: 'rainbow-mood-lamp',
@@ -125,7 +117,7 @@ export const products: Product[] = [
     description: 'Rainbow was designed to add a sense of joy to your home, what we all feel when we see a rainbow! This multi-colored ceramic mood lamp will brighten up any room it is added to.',
     material: 'Ceramic',
     price: 119,
-    images: ['/images/products/rainbow-mood-lamp.jpg'],
+    images: ['/images/products/rainbow-mood-lamp-lifestyle.png', '/images/products/rainbow-mood-lamp-detail.png', '/images/products/rainbow-mood-lamp-studio.png'],
   },
   {
     id: 'tilt-desk-lamp',
@@ -136,7 +128,7 @@ export const products: Product[] = [
     description: 'A funky desk lamp to brighten up the dreariest of days. The shiny metal upright is designed to follow the edge of the shade and base. The base and shade are in identical shape but contrasting materials: colourful spun metal shades and dazzling terrazzo, creating a contemporary look.',
     material: 'Colorful terrazzo base & metal shade',
     price: 229,
-    images: ['/images/products/tilt-desk-lamp.jpg'],
+    images: ['/images/products/tilt-desk-lamp-lifestyle.png', '/images/products/tilt-desk-lamp-detail.png', '/images/products/tilt-desk-lamp-studio.png'],
     featured: true,
   },
   {
@@ -148,7 +140,7 @@ export const products: Product[] = [
     description: 'Like its desk lamp partner in crime, the Tilt floor lamp will add some functional task lighting in a funky way. Using contrasting materials: colourful spun metal shades and dazzling terrazzo, creating a contemporary look.',
     material: 'Colorful terrazzo base & metal shade',
     price: 389,
-    images: ['/images/products/tilt-floor-lamp.jpg'],
+    images: ['/images/products/tilt-floor-lamp-lifestyle.png', '/images/products/tilt-floor-lamp-detail.png', '/images/products/tilt-floor-lamp-studio.png'],
   },
   {
     id: 'mai-pendant',
@@ -159,7 +151,7 @@ export const products: Product[] = [
     description: 'Mai has a look that we all know and love with added Saola flair, traditional Vietnamese bamboo weaving with a pop of colour!',
     material: 'Bamboo',
     price: 169,
-    images: ['/images/products/mai-pendant.jpg'],
+    images: ['/images/products/mai-pendant-lifestyle.png', '/images/products/mai-pendant-detail.png', '/images/products/mai-pendant-studio.png'],
   },
   {
     id: 'wander-pendant',
@@ -189,7 +181,7 @@ export const products: Product[] = [
     description: 'Want something fun and bold? Block is inspired by our childhood toy – Lego – the iconic Block, will help to build a foundation in any statement interior. The base is made of ceramic, in as eye-popping glazes as the shape.',
     material: 'Ceramic',
     price: 179,
-    images: ['/images/products/block-table-lamp.jpg'],
+    images: ['/images/products/block-table-lamp-lifestyle.png'],
     featured: true,
   },
   {
@@ -201,11 +193,7 @@ export const products: Product[] = [
     description: 'Bunny is inspired by an American artist Jeff Koons. It is made as if a little bunny has snuck into your home, hidden under the lampshade just around the corners. In striking metallic finish the Bunny lamp will surely capture the attention of whoever visits your home regardless of their age.',
     material: 'Resin',
     price: 249,
-    images: [
-      '/images/products/bunny-table-lamp-studio.png',
-      '/images/products/bunny-table-lamp-lifestyle.png',
-      '/images/products/bunny-table-lamp-detail.png',
-    ],
+    images: ['/images/products/bunny-table-lamp-lifestyle.png', '/images/products/bunny-table-lamp-detail.png', '/images/products/bunny-table-lamp-studio.png'],
     featured: true,
     new: true,
   },
@@ -218,7 +206,7 @@ export const products: Product[] = [
     description: 'Designed as a tribute to our lovable pet sausage dog whom we love and to all those other crazy Weiner dog lovers out there. Choose yours in matte black, mustard and ketchup glazes.',
     material: 'Ceramic',
     price: 199,
-    images: ['/images/products/hot-dog-table-lamp.jpg'],
+    images: ['/images/products/hot-dog-table-lamp-lifestyle.png', '/images/products/hot-dog-table-lamp-detail.png', '/images/products/hot-dog-table-lamp-studio.png'],
   },
   {
     id: 'dino-table-lamp',
@@ -229,7 +217,7 @@ export const products: Product[] = [
     description: 'The spikes of a Dinosaur creates a playful design feature for this lamp. It will surely update your space with asymmetry and its unique shape. Imagine having a dinosaur in your home. Fantastic!',
     material: 'Ceramic',
     price: 219,
-    images: ['/images/products/dino-table-lamp.jpg'],
+    images: ['/images/products/dino-table-lamp-lifestyle.png', '/images/products/dino-table-lamp-detail.png', '/images/products/dino-table-lamp-studio.png'],
   },
   {
     id: 'domo-mood-lamp',
@@ -240,7 +228,7 @@ export const products: Product[] = [
     description: 'Domo was inspired by the 20th Century brutalist design era. With contrasting curves and straight edges, this architectural masterpiece will stand proud in any home.',
     material: 'Concrete',
     price: 149,
-    images: ['/images/products/domo-mood-lamp.jpg'],
+    images: ['/images/products/domo-mood-lamp-lifestyle.png', '/images/products/domo-mood-lamp-detail.png', '/images/products/domo-mood-lamp-studio.png'],
   },
   {
     id: 'observatory-mood-lamp',
@@ -251,7 +239,7 @@ export const products: Product[] = [
     description: 'A love story of materials and contrasts. The Observatory mood lamp shows the beauty of natural stone in its simplest form and contrasts it with the workmanship used to spin a curved metal shade.',
     material: 'Travertine/marble with metal shade',
     price: 189,
-    images: ['/images/products/observatory-mood-lamp.jpg'],
+    images: ['/images/products/observatory-mood-lamp-lifestyle.png', '/images/products/observatory-mood-lamp-detail.png', '/images/products/observatory-mood-lamp-studio.png'],
   },
   {
     id: 'edo-mood-lamp',
@@ -262,7 +250,7 @@ export const products: Product[] = [
     description: 'Edo draws inspiration from contemporary ceramic sculpture design and aliens of course! A lively mood lamp to add character and colour to your space. The globe gives diffused light that can be dimmed as desired.',
     material: 'Resin',
     price: 169,
-    images: ['/images/products/edo-mood-lamp.jpg'],
+    images: ['/images/products/edo-mood-lamp-lifestyle.png', '/images/products/edo-mood-lamp-detail.png', '/images/products/edo-mood-lamp-studio.png'],
   },
   {
     id: 'dino-floor-lamp',
@@ -273,7 +261,7 @@ export const products: Product[] = [
     description: 'We loved the Dino table lamp so much we had to make it supersized. The design looks just as great with the iconic dinosaur spikes running down the ceramic body. A tall shade adds the final touches to this statement piece.',
     material: 'Ceramic',
     price: 449,
-    images: ['/images/products/dino-floor-lamp.jpg'],
+    images: ['/images/products/dino-floor-lamp-lifestyle.png', '/images/products/dino-floor-lamp-detail.png', '/images/products/dino-floor-lamp-studio.png'],
   },
   {
     id: 'hook-floor-lamp',
@@ -284,7 +272,7 @@ export const products: Product[] = [
     description: 'Hook draws inspiration from the many fisherman we see in Vietnam using their fishhooks and bamboo fish traps, transforming them into a sleek industrial lamp fit for the city. Available in a variety of finishes to fit your interior styling.',
     material: 'Natural weaved with concrete base',
     price: 349,
-    images: ['/images/products/hook-floor-lamp.jpg'],
+    images: ['/images/products/hook-floor-lamp-lifestyle.png', '/images/products/hook-floor-lamp-detail.png', '/images/products/hook-floor-lamp-studio.png'],
     featured: true,
   },
   {
@@ -296,7 +284,7 @@ export const products: Product[] = [
     description: 'A modern industrial masterpiece, Hoop is created using a subtle crossroads of rounded shapes. The pendant suspends as if defying gravity and we love the effect that the light creates through the metal mesh.',
     material: 'Metal mesh',
     price: 279,
-    images: ['/images/products/hoop-pendant.jpg'],
+    images: ['/images/products/hoop-pendant-lifestyle.png', '/images/products/hoop-pendant-detail.png', '/images/products/hoop-pendant-studio.png'],
   },
 
   // COSMOPOLITAN EXPERT
@@ -309,7 +297,7 @@ export const products: Product[] = [
     description: 'Verta is designed to celebrate the forms that can be achieved on the wood lathe. Its soft rippling curves catch the light beautifully creating a sense of warmth to your interior.',
     material: 'Wood & linen shade',
     price: 159,
-    images: ['/images/products/verta-bedside-lamp.jpg'],
+    images: ['/images/products/verta-bedside-lamp-lifestyle.png', '/images/products/verta-bedside-lamp-detail.png', '/images/products/verta-bedside-lamp-studio.png'],
   },
   {
     id: 'verta-table-lamp',
@@ -320,7 +308,7 @@ export const products: Product[] = [
     description: 'A larger table lamp size of Verta is designed to celebrate the forms that can be achieved on the wood lathe. Its soft rippling curves catch the light beautifully creating a sense of warmth to your interior.',
     material: 'Wood & linen shade',
     price: 199,
-    images: ['/images/products/verta-table-lamp.jpg'],
+    images: ['/images/products/verta-table-lamp-lifestyle.png', '/images/products/verta-table-lamp-detail.png', '/images/products/verta-table-lamp-studio.png'],
     featured: true,
   },
   {
@@ -332,7 +320,7 @@ export const products: Product[] = [
     description: 'Phi is designed to showcase some of our favourite Vietnamese materials. A ceramic base with a beautiful reactive glaze paired with a natural raffia shade that gives a cosy warm glow.',
     material: 'Ceramic with natural weaved shade',
     price: 179,
-    images: ['/images/products/phi-table-lamp.jpg'],
+    images: ['/images/products/phi-table-lamp-lifestyle.png', '/images/products/phi-table-lamp-detail.png', '/images/products/phi-table-lamp-studio.png'],
   },
   {
     id: 'kyoto-mood-lamp',
@@ -343,7 +331,7 @@ export const products: Product[] = [
     description: 'Interested in the bamboo trend? Kyoto is tapping into the market with a hint of Japanese influences. The bamboo shade is handmade by our talented artisan craftsmen, it sits perfectly on top of a concrete base giving it a modern and refined look.',
     material: 'Bamboo & concrete base',
     price: 139,
-    images: ['/images/products/kyoto-mood-lamp.jpg'],
+    images: ['/images/products/kyoto-mood-lamp-lifestyle.png', '/images/products/kyoto-mood-lamp-detail.png', '/images/products/kyoto-mood-lamp-studio.png'],
     featured: true,
   },
   {
@@ -355,7 +343,7 @@ export const products: Product[] = [
     description: 'The perfect companion on your desk. Connie provides excellent task light while using premium materials, adding a sense of style and efficiency to your workspace.',
     material: 'Stone/Wood base with metal shade',
     price: 209,
-    images: ['/images/products/connie-desk-lamp.jpg'],
+    images: ['/images/products/connie-desk-lamp-lifestyle.png', '/images/products/connie-desk-lamp-detail.png', '/images/products/connie-desk-lamp-studio.png'],
   },
   {
     id: 'stack-floor-lamp',
@@ -366,7 +354,7 @@ export const products: Product[] = [
     description: 'Inspired by bamboo trees, Stack brings the countryside into the home! Using a natural mix of materials, this is a great lamp to add ambient light to your living area.',
     material: 'Wood elements with stone base',
     price: 329,
-    images: ['/images/products/stack-floor-lamp.jpg'],
+    images: ['/images/products/stack-floor-lamp-lifestyle.png', '/images/products/stack-floor-lamp-detail.png', '/images/products/stack-floor-lamp-studio.png'],
   },
   {
     id: 'butler-floor-lamp',
@@ -377,7 +365,7 @@ export const products: Product[] = [
     description: 'A timeless tripod design done the Saola way, using a stunning combination of warm wood and cast metal. This modern classic will add some regal panache to any living space it graces.',
     material: 'Wood',
     price: 379,
-    images: ['/images/products/butler-floor-lamp.jpg'],
+    images: ['/images/products/butler-floor-lamp-lifestyle.png', '/images/products/butler-floor-lamp-detail.png', '/images/products/butler-floor-lamp-studio.png'],
     featured: true,
   },
   {
@@ -389,7 +377,7 @@ export const products: Product[] = [
     description: 'Bring in coziness and personality to your home, with a classic shape and blended color bamboo woven shade. One thing that you will love more is that it is a foldable shade!',
     material: 'Bamboo',
     price: 189,
-    images: ['/images/products/seline-pendant.jpg'],
+    images: ['/images/products/seline-pendant-lifestyle.png', '/images/products/seline-pendant-detail.png', '/images/products/seline-pendant-studio.png'],
   },
   {
     id: 'penny-wide-pendant',
@@ -400,7 +388,7 @@ export const products: Product[] = [
     description: 'Industrial design style but softer. Penny has a refined shape combined with a textured ceramic glaze to achieve this look.',
     material: 'Ceramic',
     price: 219,
-    images: ['/images/products/penny-wide-pendant.jpg'],
+    images: ['/images/products/penny-wide-pendant-lifestyle.png', '/images/products/penny-wide-pendant-detail.png', '/images/products/penny-wide-pendant-studio.png'],
   },
   {
     id: 'penny-tall-pendant',
@@ -411,7 +399,7 @@ export const products: Product[] = [
     description: 'Industrial design style but softer. Penny has a refined shape combined with a textured ceramic glaze to achieve this look.',
     material: 'Ceramic',
     price: 199,
-    images: ['/images/products/penny-tall-pendant.jpg'],
+    images: ['/images/products/penny-tall-pendant-lifestyle.png', '/images/products/penny-tall-pendant-detail.png', '/images/products/penny-tall-pendant-studio.png'],
   },
 
   // PRETTY & POSH
@@ -485,7 +473,7 @@ export const products: Product[] = [
     description: 'A sophisticated statement for any table or shelf. A modernized version of working by candlelight. The Hyde mood lamp uses a luxe combination of stone and metal to add some classiness to your space.',
     material: 'Travertine/Marble',
     price: 179,
-    images: ['/images/products/hyde-mood-lamp.jpg'],
+    images: ['/images/products/hyde-mood-lamp-lifestyle.png', '/images/products/hyde-mood-lamp-detail.png', '/images/products/hyde-mood-lamp-studio.png'],
   },
   {
     id: 'ariel-mood-lamp',
@@ -496,7 +484,7 @@ export const products: Product[] = [
     description: 'This rare find features a glowing pearl inside a beautiful ceramic shell. Inspired by one of Vietnam\'s natural beauties, the pearl!',
     material: 'Ceramic',
     price: 169,
-    images: ['/images/products/ariel-mood-lamp.jpg'],
+    images: ['/images/products/ariel-mood-lamp-lifestyle.png', '/images/products/ariel-mood-lamp-detail.png', '/images/products/ariel-mood-lamp-studio.png'],
   },
   {
     id: 'geode-floor-lamp',
@@ -523,7 +511,7 @@ export const products: Product[] = [
     description: 'Isabella is inspired by the vintage jelly molds our grandmas used to make desserts. We gave this memory a modern Saola twist, and now the jelly mold is reborn as a statement ceramic pendant lamp, perfect for the kitchen.',
     material: 'Ceramic',
     price: 249,
-    images: ['/images/products/isabella-pendant.jpg'],
+    images: ['/images/products/isabella-pendant-lifestyle.png', '/images/products/isabella-pendant-detail.png', '/images/products/isabella-pendant-studio.png'],
   },
   {
     id: 'wagasa-pendant',
@@ -534,7 +522,7 @@ export const products: Product[] = [
     description: 'Wagasa is the name of the famous oil paper umbrella in Japan. The refined striped pattern on the shade is inspired from this classic silhouette. The textured glaze combined with the umbrella shape add a romantic flair to your living space.',
     material: 'Ceramic',
     price: 229,
-    images: ['/images/products/wagasa-pendant.jpg'],
+    images: ['/images/products/wagasa-pendant-lifestyle.png', '/images/products/wagasa-pendant-detail.png', '/images/products/wagasa-pendant-studio.png'],
     featured: true,
   },
   {
