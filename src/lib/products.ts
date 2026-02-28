@@ -162,7 +162,12 @@ export const products: Product[] = [
     description: 'Sometimes you like to take a walk on the winding road? So get a Wander light, the colorful matte glaze with curvaceous feminine shape, ensures you will have a nice partner on the amazing trip.',
     material: 'Ceramic',
     price: 199,
-    images: ['/images/products/wander-pendant.jpg'],
+    images: [
+      '/images/products/wander-1.jpg',
+      '/images/products/wander-2.jpg',
+      '/images/products/wander-3.jpg',
+      '/images/products/wander-4.jpg',
+    ],
   },
 
   // EXPERIMENTAL REBEL
@@ -406,7 +411,11 @@ export const products: Product[] = [
     description: 'Lotus pays tribute to the Vietnamese national flower. We love taking inspiration from nature and we think the Lotus Lamp is just as beautiful as the flower!',
     material: 'Ceramic',
     price: 219,
-    images: ['/images/products/lotus-table-lamp.jpg'],
+    images: [
+      '/images/products/lotus-1.jpg',
+      '/images/products/lotus-2.jpg',
+      '/images/products/lotus-3.jpg',
+    ],
     featured: true,
     new: true,
   },
@@ -419,7 +428,11 @@ export const products: Product[] = [
     description: 'Clove is a celebration of a plant that many of us love to cook with, the garlic plant. A beautifully refined ceramic lamp, perfect for your bedside table. Don\'t worry it won\'t smell like real garlic!',
     material: 'Ceramic',
     price: 169,
-    images: ['/images/products/clove-table-lamp.jpg'],
+    images: [
+      '/images/products/clove-1.jpg',
+      '/images/products/clove-2.jpg',
+      '/images/products/clove-3.jpg',
+    ],
   },
   {
     id: 'marshmallow-table-lamp',
@@ -430,7 +443,10 @@ export const products: Product[] = [
     description: 'It\'s delicious, It\'s sweet, it\'s positively delectable. It\'s the Marshmallow light. Using Vietnamese\'s infamous ceramic handicraft, we brought these delicious treats to your home. The cute sized lamp would sit perfectly on your bedside.',
     material: 'Ceramic',
     price: 149,
-    images: ['/images/products/marshmallow-table-lamp.jpg'],
+    images: [
+      '/images/products/marshmallow-colorful.jpg',
+      '/images/products/marshmallow-white.jpg',
+    ],
     featured: true,
   },
   {
@@ -442,7 +458,10 @@ export const products: Product[] = [
     description: 'Geode is made up of polygonal geometry. Modern, simple, exquisite. We think this lamp speaks for itself.',
     material: 'Faux marble',
     price: 239,
-    images: ['/images/products/geode-table-lamp.jpg'],
+    images: [
+      '/images/products/geode-table-black.jpg',
+      '/images/products/geode-table-green.jpg',
+    ],
   },
   {
     id: 'hyde-mood-lamp',
@@ -475,7 +494,11 @@ export const products: Product[] = [
     description: 'Standing loud and proud, this elegant geometric marble floor lamp adds a touch of luxe to your living room, sure to bring hotel luxury to your home.',
     material: 'Faux marble',
     price: 469,
-    images: ['/images/products/geode-floor-lamp.jpg'],
+    images: [
+      '/images/products/geode-floor-1.jpg',
+      '/images/products/geode-floor-2.jpg',
+      '/images/products/geode-floor-3.jpg',
+    ],
     featured: true,
   },
   {
@@ -501,6 +524,17 @@ export const products: Product[] = [
     images: ['/images/products/wagasa-pendant.jpg'],
     featured: true,
   },
+  {
+    id: 'dodeca-table-lamp',
+    slug: 'dodeca-table-lamp',
+    name: 'Dodeca Table Lamp',
+    collection: 'pretty-posh',
+    tagline: 'Twelve-sided elegance',
+    description: 'Dodeca draws its name from the dodecahedron, a twelve-sided geometric form. This sculptural table lamp combines mathematical precision with organic warmth, creating a striking focal point for any refined interior.',
+    material: 'Resin',
+    price: 209,
+    images: ['/images/products/dodeca-table-brown.jpg'],
+  },
 ]
 
 export function getProductBySlug(slug: string): Product | undefined {
@@ -521,6 +555,10 @@ export function getNewProducts(): Product[] {
 
 export function getAllProducts(): Product[] {
   return products
+}
+
+export function hasRealImages(product: Product): boolean {
+  return product.images.length > 0 && !product.images[0].includes('placeholder')
 }
 
 export function formatPrice(price: number): string {
